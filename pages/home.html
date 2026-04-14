@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LaundryLux - Home</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* header */
+        header {
+            background-color: #f2f2f2;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* nav bar */
+        nav {
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #f0c040;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 80px;
+        }
+
+        /* color boxes */
+        .boxes {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .box {
+            width: 90px;
+            height: 90px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            cursor: pointer
+        }
+
+        .input-section {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            padding: 6px 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        button {
+            padding: 6px 16px;
+            font-size: 14px;
+            background-color: #d3d3d3;
+            border: 1px solid #bdbdbd;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c7c7c7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="greeting">
+        Hello
+    </header>
+
+    <nav>
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/services">Services</a>
+    </nav>
+
+    <div class="main">
+
+        <!-- color boxes for DOM interaction -->
+        <div class="boxes">
+            <div class="box" onclick="fillColor(this)">Red</div>
+            <div class="box" onclick="fillColor(this)">Blue</div>
+            <div class="box" onclick="fillColor(this)">Green</div>
+            <div class="box" onclick="fillColor(this)">Yellow</div>
+        </div>
+
+        <!-- name input -->
+        <div class="input-section">
+            <input type="text" id="nameInput" placeholder="Enter your name">
+            <button onclick="greetUser()">Greet</button>
+        </div>
+
+    </div>
+
+    <script>
+        function greetUser() {
+            var name = document.getElementById("nameInput").value;
+            console.log("name entered:", name);
+
+            if (name != "") {
+                document.getElementById("greeting").innerText = "Hello, " + name;
+            } else {
+                document.getElementById("greeting").innerText = "Hello";
+            }
+        }
+
+        function fillColor(box) {
+            var color = box.innerText.toLowerCase();
+            console.log("box clicked, color is:", color);
+            box.style.backgroundColor = color;
+            box.style.color = "#fff";
+        }
+    </script>
+
+</body>
+</html>
