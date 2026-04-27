@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LaundryLux - Contact</title>
+
+    <style>
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #3a86ff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+        }
+
+        .navbar {
+            background-color: #222;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 15px;
+        }
+
+        .navbar a:hover {
+            color: yellow;
+        }
+
+        .content {
+            max-width: 450px;
+            margin: 35px auto;
+            background-color: white;
+            padding: 25px 30px;
+            border: 1px solid #ccc;
+        }
+
+        h2 {
+            color: #3a86ff;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            margin-bottom: 14px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 4px;
+            color: #444;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 7px 8px;
+            font-size: 14px;
+            border: 1px solid #aaa;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        textarea {
+            height: 90px;
+        }
+
+        .btn {
+            background-color: #3a86ff;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .contact-info {
+            margin-top: 28px;
+            border-top: 1px solid #eee;
+            padding-top: 18px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Contact Us - LaundryLux</div>
+
+    <div class="navbar">
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <div class="content">
+
+        <h2>Get In Touch</h2>
+
+        <div class="row">
+            <label for="fname">Your Name:</label>
+            <input type="text" id="fname" placeholder="Enter your full name">
+        </div>
+
+        <div class="row">
+            <label for="femail">Your Email:</label>
+            <input type="email" id="femail" placeholder="Enter your email address">
+        </div>
+
+        <div class="row">
+            <label for="fmsg">Message:</label>
+            <textarea id="fmsg" placeholder="Type your message here..."></textarea>
+        </div>
+
+        <button class="btn" onclick="checkForm()">Send Message</button>
+
+        <div class="contact-info">
+            <strong>Address:</strong> 12, Civil Lines, Lucknow, UP 226001<br>
+            <strong>Phone:</strong> +91 98765 43210<br>
+            <strong>Email:</strong> support@laundrylux.in<br>
+            <strong>Hours:</strong> Monday to Saturday, 8 AM to 8 PM
+        </div>
+
+    </div>
+
+    <script>
+        function checkForm() {
+            var name = document.getElementById("fname").value;
+            var email = document.getElementById("femail").value;
+            var msg = document.getElementById("fmsg").value;
+
+            if (name == "") {
+                alert("Name cannot be empty!");
+                return;
+            }
+            if (email == "") {
+                alert("Email cannot be empty!");
+                return;
+            }
+
+            if (msg == "") {
+                alert("Please write a message!");
+                return;
+            }
+
+            alert("Message sent successfully! We will contact you soon.");
+        }
+    </script>
+
+</body>
+</html>

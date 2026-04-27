@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LaundryLux - Home</title>
+
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #greeting {
+            background-color: #3a86ff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+        }
+
+        .navbar {
+            background-color: #222;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 15px;
+        }
+
+        .navbar a:hover {
+            color: yellow;
+        }
+
+        .content {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .content h2 {
+            color: #333;
+            font-size: 22px;
+        }
+
+        .content p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .colorbox {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border: 2px solid #999;
+            margin: 8px;
+            background-color: #ddd;
+            cursor: pointer;
+            font-size: 13px;
+            line-height: 80px;
+            color: #333;
+        }
+
+        .name-part {
+            margin-top: 30px;
+        }
+
+        .name-part input {
+            padding: 6px 8px;
+            font-size: 14px;
+            border: 1px solid #aaa;
+        }
+
+        .name-part button {
+            padding: 6px 14px;
+            font-size: 14px;
+            background-color: #3a86ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="greeting">Welcome to LaundryLux!</div>
+
+    <div class="navbar">
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <div class="content">
+
+        <h2>Fresh Clothes, Zero Hassle</h2>
+        <p>Drop off your laundry and we handle the rest. Pickup and delivery available too.</p>
+
+        <hr style="width: 40%; margin: 20px auto;">
+
+        <h3>Click the boxes to fill them with color</h3>
+
+        <div>
+            <div class="colorbox" onclick="fillColor(this, 'red')">Red</div>
+            <div class="colorbox" onclick="fillColor(this, 'blue')">Blue</div>
+            <div class="colorbox" onclick="fillColor(this, 'green')">Green</div>
+            <div class="colorbox" onclick="fillColor(this, 'orange')">Orange</div>
+        </div>
+
+        <div class="name-part">
+            <p>Type your name to get a greeting:</p>
+            <input type="text" id="nameInput" placeholder="Your name">
+            <button onclick="greetUser()">Say Hello</button>
+        </div>
+
+    </div>
+
+    <script>
+        function fillColor(box, color) {
+        console.log("clicked: " + color);
+            box.style.backgroundColor = color;
+            box.style.color = "white";
+            box.innerText = "done!";
+        }
+
+        function greetUser() {
+            var name = document.getElementById("nameInput").value;
+            if (name == "") {
+                alert("Please enter a name first!");
+            } else {
+                document.getElementById("greeting").innerText = "Hello " + name + "! Welcome to LaundryLux!";
+            }
+        }
+    </script>
+
+</body>
+</html>
